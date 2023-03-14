@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition forZFC_C_HEADERTP'
+define service ZFC_UI_HEADER {
+  expose ZFC_C_HEADERTP as Header;
+}

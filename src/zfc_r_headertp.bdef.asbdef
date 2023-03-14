@@ -1,0 +1,45 @@
+managed implementation in class ZFC_BP_HeaderTP unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZFC_R_HEADERTP alias Header
+persistent table zfc_tst_header
+draft table ZFC_DHEAD
+etag master Timestamp
+lock master total etag Timestamp
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Zzfpa,
+   Vkorg;
+
+  field ( readonly : update )
+   Zzfpa,
+   Vkorg;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZFC_TST_HEADER
+  {
+    Zzfpa = zzfpa;
+    Vkorg = vkorg;
+    Vtweg = vtweg;
+    BufDex = buf_dex;
+    Consignment = consignment;
+    Fcperiod = fcperiod;
+    Fcastrecvddate = fcastrecvddate;
+    Contact = contact;
+    AccMan = acc_man;
+    Timestamp = timestamp;
+  }
+}
