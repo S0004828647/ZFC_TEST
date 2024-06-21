@@ -18,7 +18,16 @@ ENDCLASS.
 
 
 
-CLASS zcl_ks_email_test IMPLEMENTATION.
+CLASS ZCL_KS_EMAIL_TEST IMPLEMENTATION.
+
+
+  METHOD if_oo_adt_classrun~main.
+
+    send_email( ).
+
+  ENDMETHOD.
+
+
   METHOD send_email.
     TRY.
         DATA(lo_mail) = cl_bcs_mail_message=>create_instance( ).
@@ -41,12 +50,4 @@ CLASS zcl_ks_email_test IMPLEMENTATION.
 *    “handle exceptions here
     ENDTRY.
   ENDMETHOD.
-
-
-  METHOD if_oo_adt_classrun~main.
-
-    send_email( ).
-
-  ENDMETHOD.
-
 ENDCLASS.
